@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './question.dart';
+import './answer.dart';
 
 class MyApp extends StatefulWidget {
   @override
@@ -19,8 +20,18 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     var questions = [
-      'What is your favourite color?',
-      'What is your favourite sport?',
+      {
+        'questionText': 'What is your favourite color?',
+        'answers': ['Black', 'Red', 'Blue'],
+      },
+      {
+        'questionText': 'What is your favourite sport?',
+        'answers': ['Football', 'Cricket', 'Basketball'],
+      },
+      {
+        'questionText': 'What is your favourite animal?',
+        'answers': ['Elephant', 'Lion', 'Tortoise'],
+      },
     ];
     return MaterialApp(
       home: Scaffold(
@@ -30,16 +41,13 @@ class _MyAppState extends State<MyApp> {
         body: Column(
           children: [
             Question(
-              questions[questionIndex],
+              questions[questionIndex]['questionText'],
             ),
-            RaisedButton(
-              child: Text('Button 1'),
-              onPressed: answerQuestion,
-            ),
-            RaisedButton(
-              onPressed: answerQuestion,
-              child: Text('Button 2'),
-            ),
+            ...(questions[questionIndex]['answers'] as List<String>).map(
+              (answer) {
+                return Answer(answerQuestion, answer);
+              },
+            ).toList(),
           ],
         ),
       ),
