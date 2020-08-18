@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Question extends StatelessWidget {
-  final String questionText;
+  final questionText;
 
   Question(this.questionText);
 
@@ -9,12 +9,36 @@ class Question extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
+      margin: EdgeInsets.all(10),
       child: Text(
         questionText,
-        style: TextStyle(fontSize: 20),
+        style: TextStyle(
+          fontSize: 20,
+          color: Colors.pink,
+        ),
         textAlign: TextAlign.center,
       ),
-      margin: EdgeInsets.all(10),
     );
+  }
+}
+
+class StatusBar extends StatelessWidget {
+  final questionText;
+
+  StatusBar(this.questionText);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        width: double.infinity,
+        margin: EdgeInsets.all(10),
+        child: Text(
+          questionText,
+          style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+          ),
+          textAlign: TextAlign.center,
+        ));
   }
 }

@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 
 import './question.dart';
 
-class MyApping extends StatefulWidget {
+class MyApp extends StatefulWidget {
   @override
-  _MyAppingState createState() => _MyAppingState();
+  _MyAppState createState() => _MyAppState();
 }
 
-class _MyAppingState extends State<MyApping> {
+class _MyAppState extends State<MyApp> {
   var questionIndex = 0;
+
   void answerQuestion() {
     setState(() {
       questionIndex = questionIndex + 1;
@@ -24,11 +25,13 @@ class _MyAppingState extends State<MyApping> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Question(questions[questionIndex]),
+          title: StatusBar('My first app'),
         ),
         body: Column(
           children: [
-            Text('Buttons: '),
+            Question(
+              questions[questionIndex],
+            ),
             RaisedButton(
               child: Text('Button 1'),
               onPressed: answerQuestion,
