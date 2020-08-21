@@ -38,10 +38,19 @@ class _MyAppState extends State<MyApp> {
         {'text': 'Lion', 'score': 0},
       ],
     },
+    {
+      'questionText': 'Who is our current Prime Minister?',
+      'answers': [
+        {'text': 'Rahul Gandhi', 'score': 0},
+        {'text': 'Moraji Desai', 'score': 0},
+        {'text': 'Narendra Modi', 'score': 1},
+      ],
+    },
   ];
 
   void answerQuestion(int score) {
     _totalScore += score;
+    print(questions.length);
     setState(() {
       questionIndex = questionIndex + 1;
     });

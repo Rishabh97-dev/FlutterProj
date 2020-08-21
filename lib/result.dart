@@ -8,12 +8,14 @@ class Result extends StatelessWidget {
 
   String get resultPhrase {
     String resultText;
-    if (resultScore == 3) {
+    if (resultScore == 4) {
       resultText = 'Congratulations!, you scored full marks';
+    } else if (resultScore == 3) {
+      resultText = 'Excellent!, you scored 3/4';
     } else if (resultScore == 2) {
-      resultText = 'Good!, you scored 2/3';
+      resultText = 'Good!, you scored 2/4';
     } else if (resultScore == 1) {
-      resultText = 'You scored 1/3, can do better!';
+      resultText = 'You scored 1/4, can do better!';
     } else {
       resultText = 'You got all answers wrong, Work harder!!!';
     }

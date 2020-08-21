@@ -14,8 +14,8 @@ class Question extends StatelessWidget {
       child: Text(
         questionText,
         style: TextStyle(
-          fontSize: 20,
-          color: Colors.pink,
+          fontSize: 30,
+          color: Colors.black,
         ),
         textAlign: TextAlign.center,
       ),
@@ -36,7 +36,7 @@ class StatusBar extends StatelessWidget {
         child: Text(
           questionText,
           style: TextStyle(
-            fontSize: 30,
+            fontSize: 36,
             fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.center,
